@@ -1,32 +1,16 @@
-﻿using System.Text;
+﻿
 
+string[] bannedWords = Console.ReadLine().Split(", ");
 string text = Console.ReadLine();
 
-StringBuilder digit = new StringBuilder();
-
-
-StringBuilder letters = new StringBuilder();
-
-
-StringBuilder otherCharacters = new StringBuilder();
-
-foreach(char symbol in text)
+foreach (string word in bannedWords)
 {
-    if (char.IsDigit(symbol))
-    {
-        digit.Append(symbol);
-    }
-    else if (char.IsLetter(symbol))
-    {
-        letters.Append(symbol);
-    }
-    else
-    {
-        otherCharacters.Append(symbol);
-    }
+    string censorWord = "".PadLeft(word.Length, '*');
 
+    if (text.Contains(word))
+    {
+        text = text.Replace(word, censorWord);
+    }
 }
 
-Console.WriteLine(digit);
-Console.WriteLine(letters);
-Console.WriteLine(otherCharacters);
+Console.WriteLine(text);
