@@ -1,16 +1,13 @@
-﻿
+﻿string[] words = Console.ReadLine().Split();
 
-string[] bannedWords = Console.ReadLine().Split(", ");
-string text = Console.ReadLine();
+string output = "";
 
-foreach (string word in bannedWords)
+for (int i = 0; i < words.Length; i++)
 {
-    string censorWord = "".PadLeft(word.Length, '*');
-
-    if (text.Contains(word))
+    string curruntWort = words[i];
+    for (int j = 0; j < curruntWort.Length; j++)
     {
-        text = text.Replace(word, censorWord);
+        output += curruntWort;
     }
 }
-
-Console.WriteLine(text);
+Console.WriteLine(output);
