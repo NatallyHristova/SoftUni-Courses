@@ -1,2 +1,3 @@
-# SoftUni-Courses
-Courses from my education@Softuni.
+# Strings and Text Processing
+Homework from Lab
+
